@@ -4,13 +4,9 @@ def build_matrix(a, n, m):
         return None
 
     matrix = []
-    idx = 0
     for i in range(n):
-        row = []
-        for j in range(m):
-            row.append(a[idx])
-            idx += 1
-        matrix.append(row)
+        matrix.append(a[i*m : i*m + m])
+        
     return matrix
 
 def print_matrix(matrix):
