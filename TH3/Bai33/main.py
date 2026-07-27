@@ -1,14 +1,4 @@
-"""
-Bài 3.3 - Merge lists
-Trộn hai danh sách theo kiểu xen kẽ
-"""
-
-
 def merge_lists(a, b):
-    """
-    Trộn hai danh sách a và b thành danh sách thứ 3.
-    Các phần tử được lấy xen kẽ từ hai danh sách.
-    """
     result = []
     i, j = 0, 0
     n, m = len(a), len(b)
@@ -34,7 +24,6 @@ def merge_lists(a, b):
 
 
 def print_test_case(label, a, b):
-    """In kết quả test case"""
     print(f"\n{label}")
     print(f"  a = {a}")
     print(f"  b = {b}")
@@ -84,24 +73,18 @@ def main():
     print("\n--- Test case 6: Nhập từ bàn phím ---")
     a_input = input("Nhập danh sách a (các phần tử cách nhau bằng khoảng trắng): ").split()
     # Thử chuyển sang số nếu có thể
-    a_parsed = []
+    arr_a = []
     for x in a_input:
-        try:
-            a_parsed.append(int(x))
-        except ValueError:
-            a_parsed.append(x)
+        arr_a.append(x)
 
     b_input = input("Nhập danh sách b (các phần tử cách nhau bằng khoảng trắng): ").split()
-    b_parsed = []
+    arr_b = []
     for x in b_input:
-        try:
-            b_parsed.append(int(x))
-        except ValueError:
-            b_parsed.append(x)
+        arr_b.append(x)
 
-    c = merge_lists(a_parsed, b_parsed)
-    print(f"  a = {a_parsed}")
-    print(f"  b = {b_parsed}")
+    c = merge_lists(arr_a, arr_b)
+    print(f"  a = {arr_a}")
+    print(f"  b = {arr_b}")
     print(f"  c = {c}")
 
 
