@@ -8,9 +8,6 @@ from services.sort_service import *
 from services.statistic_service import *
 
 
-receipt = None
-
-
 def menu():
 
     print("\n=========== MENU ===========")
@@ -82,140 +79,148 @@ def statistic_menu():
     print("10. Thành tiền trung bình")
 
 
-while True:
+def main():
 
-    menu()
+    receipt = None
 
-    choice = int(input("Chọn: "))
+    while True:
 
-    if choice == 1:
+        menu()
 
-        receipt = input_receipt()
+        choice = int(input("Chọn: "))
 
-    elif choice == 2:
+        if choice == 1:
 
-        receipt = read_receipt("data/input.txt")
+            receipt = input_receipt()
 
-        print("Đọc file thành công!")
+        elif choice == 2:
 
-    elif choice == 3:
+            receipt = read_receipt("data/input.txt")
 
-        if receipt is None:
+            print("Đọc file thành công!")
 
-            print("Chưa có dữ liệu.")
+        elif choice == 3:
+
+            if receipt is None:
+
+                print("Chưa có dữ liệu.")
+
+            else:
+
+                print(receipt)
+
+        elif choice == 4:
+
+            add_product(receipt)
+
+        elif choice == 5:
+
+            delete_product(receipt)
+
+        elif choice == 6:
+
+            update_product(receipt)
+
+        elif choice == 7:
+
+            find_product(receipt)
+
+        elif choice == 8:
+
+            sort_menu()
+
+            c = int(input("Chọn: "))
+
+            if c == 1:
+
+                sort_by_name(receipt)
+
+            elif c == 2:
+
+                sort_by_quantity(receipt)
+
+            elif c == 3:
+
+                sort_by_quantity_desc(receipt)
+
+            elif c == 4:
+
+                sort_by_total(receipt)
+
+            elif c == 5:
+
+                sort_by_total_desc(receipt)
+
+            elif c == 6:
+
+                sort_by_quantity_and_total(receipt)
+
+            elif c == 7:
+
+                sort_by_price_and_name(receipt)
+
+        elif choice == 9:
+
+            statistic_menu()
+
+            c = int(input("Chọn: "))
+
+            if c == 1:
+
+                print("Tổng tiền:", total_money(receipt))
+
+            elif c == 2:
+
+                print(max_price(receipt))
+
+            elif c == 3:
+
+                print(min_price(receipt))
+
+            elif c == 4:
+
+                print(max_quantity(receipt))
+
+            elif c == 5:
+
+                print(min_quantity(receipt))
+
+            elif c == 6:
+
+                print(max_total(receipt))
+
+            elif c == 7:
+
+                print(min_total(receipt))
+
+            elif c == 8:
+
+                print(average_price(receipt))
+
+            elif c == 9:
+
+                print(average_quantity(receipt))
+
+            elif c == 10:
+
+                print(average_total(receipt))
+
+        elif choice == 10:
+
+            write_receipt(receipt, "data/output.txt")
+
+            print("Đã ghi file.")
+
+        elif choice == 0:
+
+            print("Kết thúc chương trình.")
+
+            break
 
         else:
 
-            print(receipt)
+            print("Lựa chọn không hợp lệ.")
 
-    elif choice == 4:
 
-        add_product(receipt)
-
-    elif choice == 5:
-
-        delete_product(receipt)
-
-    elif choice == 6:
-
-        update_product(receipt)
-
-    elif choice == 7:
-
-        find_product(receipt)
-
-    elif choice == 8:
-
-        sort_menu()
-
-        c = int(input("Chọn: "))
-
-        if c == 1:
-
-            sort_by_name(receipt)
-
-        elif c == 2:
-
-            sort_by_quantity(receipt)
-
-        elif c == 3:
-
-            sort_by_quantity_desc(receipt)
-
-        elif c == 4:
-
-            sort_by_total(receipt)
-
-        elif c == 5:
-
-            sort_by_total_desc(receipt)
-
-        elif c == 6:
-
-            sort_by_quantity_and_total(receipt)
-
-        elif c == 7:
-
-            sort_by_price_and_name(receipt)
-
-    elif choice == 9:
-
-        statistic_menu()
-
-        c = int(input("Chọn: "))
-
-        if c == 1:
-
-            print("Tổng tiền:", total_money(receipt))
-
-        elif c == 2:
-
-            print(max_price(receipt))
-
-        elif c == 3:
-
-            print(min_price(receipt))
-
-        elif c == 4:
-
-            print(max_quantity(receipt))
-
-        elif c == 5:
-
-            print(min_quantity(receipt))
-
-        elif c == 6:
-
-            print(max_total(receipt))
-
-        elif c == 7:
-
-            print(min_total(receipt))
-
-        elif c == 8:
-
-            print(average_price(receipt))
-
-        elif c == 9:
-
-            print(average_quantity(receipt))
-
-        elif c == 10:
-
-            print(average_total(receipt))
-
-    elif choice == 10:
-
-        write_receipt(receipt, "data/output.txt")
-
-        print("Đã ghi file.")
-
-    elif choice == 0:
-
-        print("Kết thúc chương trình.")
-
-        break
-
-    else:
-
-        print("Lựa chọn không hợp lệ.")
+if __name__ == "__main__":
+    main()
