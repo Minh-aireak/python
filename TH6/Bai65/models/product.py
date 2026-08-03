@@ -8,6 +8,3 @@ class Product:
     @property
     def total(self):
         return self.price * self.quantity
-
-    def __str__(self):
-        return f"{self.name} | {self.price} | {self.quantity} | {self.total}"
