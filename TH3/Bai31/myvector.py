@@ -1,10 +1,4 @@
-"""
-Module myvector - thao tác trên mảng một chiều sử dụng list
-"""
-
-
 def vecinput():
-    """Nhập mảng từ bàn phím"""
     n = int(input("Nhập số phần tử của mảng: "))
     arr = []
     for i in range(n):
@@ -12,35 +6,28 @@ def vecinput():
         arr.append(val)
     return arr
 
-
 def vecsum(arr):
-    """Tính tổng các phần tử trong mảng"""
-    total = 0
-    for val in arr:
-        total += val
-    return total
-
+    return sum(arr)
 
 def vecinsert(arr, index, value):
-    """Chèn phần tử vào mảng tại vị trí index"""
     if index < 0 or index > len(arr):
         print("Vị trí chèn không hợp lệ!")
         return arr
     arr.insert(index, value)
     return arr
 
-
-def vecdel(arr, index):
-    """Xóa phần tử trong mảng tại vị trí index"""
-    if index < 0 or index >= len(arr):
-        print("Vị trí xóa không hợp lệ!")
-        return arr
-    arr.pop(index)
+def vecdel(arr, value):
+    arr = [x for x in arr if x != value]
     return arr
 
+def vecdel2(arr):
+    kq = []
+    for x in arr:
+        if x not in kq:
+            kq.append(x)
+    return kq
 
 def vecadd(arr1, arr2):
-    """Cộng hai mảng cùng kích thước. Nếu khác kích thước, trả về mảng rỗng."""
     if len(arr1) != len(arr2):
         return []
     result = []

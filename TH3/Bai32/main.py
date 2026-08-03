@@ -1,37 +1,20 @@
-"""
-Bài 3.2 - Matrix from list
-Xây dựng ma trận từ một list cho trước
-"""
-
-
 def build_matrix(a, n, m):
-    """
-    Xây dựng ma trận n x m từ list a.
-    Trả về ma trận nếu đủ phần tử, ngược lại trả về None.
-    """
     k = len(a)
     if n * m > k:
         return None
 
     matrix = []
-    idx = 0
     for i in range(n):
-        row = []
-        for j in range(m):
-            row.append(a[idx])
-            idx += 1
-        matrix.append(row)
+        matrix.append(a[i*m : i*m + m])
+        
     return matrix
 
-
 def print_matrix(matrix):
-    """In ma trận ra màn hình"""
     if matrix is None:
-        print("Không thể xây dựng ma trận (không đủ phần tử)!")
+        print("==> Không thể xây dựng ma trận (không đủ phần tử)!")
         return
     for row in matrix:
         print(row)
-
 
 def main():
     print("=== BÀI 3.2: MATRIX FROM LIST ===")
@@ -43,7 +26,7 @@ def main():
     n, m = 3, 4
     print(f"n = {n}, m = {m}")
     mat1 = build_matrix(a1, n, m)
-    print("Ma trận kết quả:")
+    print("==> Ma trận kết quả:")
     print_matrix(mat1)
 
     # Test case 2: Không đủ phần tử
@@ -52,7 +35,7 @@ def main():
     n, m = 3, 7
     print(f"n = {n}, m = {m}")
     mat2 = build_matrix(a1, n, m)
-    print("Ma trận kết quả:")
+    print("==> Ma trận kết quả:")
     print_matrix(mat2)
 
     # Test case 3: Nhập từ bàn phím
@@ -62,7 +45,7 @@ def main():
     n = int(input("Nhập số dòng n: "))
     m = int(input("Nhập số cột m: "))
     mat3 = build_matrix(a3, n, m)
-    print("Ma trận kết quả:")
+    print("==> Ma trận kết quả:")
     print_matrix(mat3)
 
 

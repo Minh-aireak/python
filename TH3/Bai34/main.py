@@ -1,55 +1,19 @@
-"""
-Bài 3.4 - Merge Sorted Lists
-Trộn hai mảng số nguyên đã được sắp xếp tăng dần
-"""
-
-
 def input_array(label):
-    """Nhập mảng số nguyên từ bàn phím"""
     print(f"Nhập mảng {label}:")
-    n = int(input(f"  Số phần tử của mảng {label}: "))
+    n = int(input(f"Số phần tử của mảng {label}: "))
     arr = []
     for i in range(n):
-        val = int(input(f"  Nhập phần tử thứ {i + 1}: "))
+        val = int(input(f"Nhập phần tử thứ {i + 1}: "))
         arr.append(val)
     return arr
 
-
 def merge_sorted(a, b):
-    """
-    Trộn hai mảng đã được sắp xếp a và b thành mảng c cũng được sắp xếp.
-    Giả sử a và b đã được sắp tăng dần.
-    """
-    c = []
-    i, j = 0, 0
-    n, m = len(a), len(b)
-
-    while i < n and j < m:
-        if a[i] <= b[j]:
-            c.append(a[i])
-            i += 1
-        else:
-            c.append(b[j])
-            j += 1
-
-    # Lấy phần còn lại từ a
-    while i < n:
-        c.append(a[i])
-        i += 1
-
-    # Lấy phần còn lại từ b
-    while j < m:
-        c.append(b[j])
-        j += 1
-
-    return c
-
+    return sorted(a + b)
 
 def print_test_case(label, a, b):
-    """In kết quả test case"""
     print(f"\n{label}")
-    print(f"  a (đã sắp xếp) = {a}")
-    print(f"  b (đã sắp xếp) = {b}")
+    print(f"a (đã sắp xếp) = {a}")
+    print(f"b (đã sắp xếp) = {b}")
     c = merge_sorted(a, b)
     print(f"  c = {c}")
 

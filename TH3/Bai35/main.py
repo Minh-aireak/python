@@ -1,14 +1,4 @@
-"""
-Bài 3.5 - Tuple from list
-Tạo tuple từ mảng xâu và đếm số phần tử có dạng số
-"""
-
-
 def is_numeric_string(s):
-    """
-    Kiểm tra xem một xâu có phải là dạng số hay không
-    (chứa toàn các con số).
-    """
     if len(s) == 0:
         return False
     for ch in s:
@@ -16,25 +6,20 @@ def is_numeric_string(s):
             return False
     return True
 
-
 def count_numeric_strings(t):
-    """Đếm số phần tử trong tuple có dạng số"""
     count = 0
     for item in t:
-        if is_numeric_string(item):
+        if item.isdigit():
             count += 1
     return count
 
-
 def print_test_case(label, a):
-    """In kết quả test case"""
     print(f"\n{label}")
-    print(f"  List a = {a}")
-    b = tuple(a)
-    print(f"  Tuple b = {b}")
+    print(f"List a = {a}")
+    b = (a)
+    print(f"Tuple b = {b}")
     count = count_numeric_strings(b)
-    print(f"  Số phần tử có dạng số: {count}")
-
+    print(f"Số phần tử có dạng số: {count}")
 
 def main():
     print("=== BÀI 3.5: TUPLE FROM LIST ===")
@@ -68,7 +53,6 @@ def main():
     input_str = input("Nhập các xâu (cách nhau bằng khoảng trắng): ")
     a5 = input_str.split()
     print_test_case("Kết quả nhập từ bàn phím", a5)
-
 
 if __name__ == "__main__":
     main()
