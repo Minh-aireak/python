@@ -1,9 +1,0 @@
-PH001
-01/01/2007
-NCC01
-LG-Electronic
-Khu CN Như Quỳnh A
-3
-TiVi,30,2
-Quạt,1.2,3
-Mobi,5,10

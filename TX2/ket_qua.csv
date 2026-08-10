@@ -1,0 +1,6 @@
+ma_don,ma_sp,ten_sp,don_gia,loai,ty_le_giam,ma_nv,ho_ten,so_luong,ngay_ban,gia_ban,thanh_tien
+DH01,SP01,Chuot may tinh,120000.0,thuong,0.0,NV01,Nguyen Van A,10,01/10/2026,120000.0,1200000.0
+DH02,SP03,Man hinh,2500000.0,khuyen_mai,0.1,NV02,Tran Thi B,2,02/10/2026,2250000.0,4500000.0
+DH03,SP02,Ban phim,250000.0,thuong,0.0,NV01,Nguyen Van A,5,03/10/2026,250000.0,1250000.0
+DH04,SP04,Tai nghe,350000.0,khuyen_mai,0.05,NV03,Le Van C,8,04/10/2026,332500.0,2660000.0
+DH05,SP03,Man hinh,2500000.0,khuyen_mai,0.1,NV02,Tran Thi B,1,05/10/2026,2250000.0,2250000.0
