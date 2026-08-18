@@ -108,3 +108,4 @@ if __name__ == "__main__":
     print(XeMay.tieu_de())
     for xe in ds_sx:
         print(xe.hien_thi())
+        

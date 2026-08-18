@@ -1,0 +1,6 @@
+﻿ma_sp,ten_sp,so_luong,don_gia,giam_gia,thanh_tien,xep_loai
+SP001,Ban phim,5,500000.0,5,2375000.0,Trung bình
+SP002,Chuot,10,250000.0,6,2350000.0,Trung bình
+SP003,Tai nghe,1,350000.0,0,350000.0,Bán chậm
+SP004,Man hinh,10,2500000.0,10,22500000.0,Bán chạy
+SP005,Ghe,15,300000.0,2,4410000.0,Bán chạy
