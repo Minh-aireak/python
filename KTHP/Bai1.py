@@ -76,6 +76,14 @@ def ghi_ra_txt(ds, path):
 
 def ghi_ra_csv(ds, path):
     with open(path, "w", encoding = "utf-8-sig", newline = "") as f:
+        cot = [...]
+        writer = csv.DictWriter(f, cot)
+        writer = csv.writeheader()
+        writer = csv.writerows(ds)
+
+
+def ghi_ra_csv(ds, path):
+    with open(path, "w", encoding = "utf-8-sig", newline = "") as f:
         cot = ["ma_nv", "ten_nv", "luong_co_ban", "so_ngay_cong", "phu_cap", "luong_thuc_te", "xep_loai"]
         writer = csv.DictWriter(f, cot)
         writer.writeheader()

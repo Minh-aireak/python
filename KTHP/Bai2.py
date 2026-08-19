@@ -25,6 +25,10 @@ class NhanVienKinhDoanh(NhanVienABC):
         self.doanh_so = doanh_so
         self.ty_le_hoa_hong = ty_le_hoa_hong 
 
+    @luong_co_ban.setter
+    def luong_co_ban(self, value):
+        return self._luong_co_ban
+
     @property
     def luong_co_ban(self):
         return self._luong_co_ban
